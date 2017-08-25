@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostsViewController" customModule="Demo" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="Mha-dw-wtr" id="qjJ-rb-8XE"/>
+                <outlet property="loadingView" destination="aTa-iJ-JDq" id="OFK-ba-yJh"/>
                 <outlet property="tableView" destination="unV-yY-zVD" id="XDf-oB-ukK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,17 +23,46 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="unV-yY-zVD">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mha-dw-wtr">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="unV-yY-zVD">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="unV-yY-zVD" secondAttribute="bottom" id="Hd4-1e-gA3"/>
+                        <constraint firstItem="unV-yY-zVD" firstAttribute="top" secondItem="Mha-dw-wtr" secondAttribute="top" id="PFC-Sv-z9J"/>
+                        <constraint firstAttribute="trailing" secondItem="unV-yY-zVD" secondAttribute="trailing" id="wXl-HK-xaB"/>
+                        <constraint firstItem="unV-yY-zVD" firstAttribute="leading" secondItem="Mha-dw-wtr" secondAttribute="leading" id="yLs-Xi-XaS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTa-iJ-JDq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VG1-dx-CNJ">
+                            <rect key="frame" x="177" y="323" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="VG1-dx-CNJ" firstAttribute="centerY" secondItem="aTa-iJ-JDq" secondAttribute="centerY" id="Lxa-26-JLP"/>
+                        <constraint firstItem="VG1-dx-CNJ" firstAttribute="centerX" secondItem="aTa-iJ-JDq" secondAttribute="centerX" id="k9C-dZ-pYP"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="unV-yY-zVD" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="YNe-vz-XaP"/>
-                <constraint firstItem="unV-yY-zVD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ze1-xO-KgL"/>
-                <constraint firstItem="unV-yY-zVD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="axb-gv-TI4"/>
-                <constraint firstItem="unV-yY-zVD" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="iNA-Jp-Zx9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aTa-iJ-JDq" secondAttribute="trailing" id="E3o-jF-kAh"/>
+                <constraint firstItem="Mha-dw-wtr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="O6c-9x-DHR"/>
+                <constraint firstItem="Mha-dw-wtr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Yt5-gh-3SA"/>
+                <constraint firstItem="aTa-iJ-JDq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pmz-G1-13s"/>
+                <constraint firstItem="Mha-dw-wtr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="qNX-h7-a4a"/>
+                <constraint firstItem="aTa-iJ-JDq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qnx-5d-4A9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aTa-iJ-JDq" secondAttribute="bottom" id="yCU-DV-gJV"/>
+                <constraint firstItem="Mha-dw-wtr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zn0-mG-S1z"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="24.5" y="51.5"/>
