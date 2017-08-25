@@ -17,6 +17,8 @@
 		1436EE681F50B2E900BCB4A6 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE671F50B2E900BCB4A6 /* ReusableCell.swift */; };
 		1436EE6D1F50B42B00BCB4A6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE6B1F50B42B00BCB4A6 /* PostTableViewCell.swift */; };
 		1436EE6E1F50B42B00BCB4A6 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1436EE6C1F50B42B00BCB4A6 /* PostTableViewCell.xib */; };
+		1436EE711F50B4E800BCB4A6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE701F50B4E800BCB4A6 /* Post.swift */; };
+		1436EE731F50B4FF00BCB4A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE721F50B4FF00BCB4A6 /* User.swift */; };
 		192D0BE55ED86B6608663307 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E84F0BD358818E3F301E068 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		1436EE671F50B2E900BCB4A6 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		1436EE6B1F50B42B00BCB4A6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		1436EE6C1F50B42B00BCB4A6 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		1436EE701F50B4E800BCB4A6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		1436EE721F50B4FF00BCB4A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		59B7E98A4A700125294BB3A1 /* Pods-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoTests/Pods-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		62699D8CDD01B057FAA89FBB /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E84F0BD358818E3F301E068 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,13 +108,14 @@
 		141E675D1F50ABC100A37114 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				1436EE661F50B2DC00BCB4A6 /* Protocols */,
 				1436EE631F50B2BB00BCB4A6 /* Extensions */,
+				1436EE6F1F50B4B800BCB4A6 /* Models */,
+				1436EE661F50B2DC00BCB4A6 /* Protocols */,
 				141E677E1F50AE2300A37114 /* ViewControllers */,
 				141E675E1F50ABC100A37114 /* AppDelegate.swift */,
 				141E67651F50ABC100A37114 /* Assets.xcassets */,
-				141E67671F50ABC100A37114 /* LaunchScreen.storyboard */,
 				141E676A1F50ABC100A37114 /* Info.plist */,
+				141E67671F50ABC100A37114 /* LaunchScreen.storyboard */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -172,6 +177,15 @@
 				1436EE6C1F50B42B00BCB4A6 /* PostTableViewCell.xib */,
 			);
 			path = PostTableViewCell;
+			sourceTree = "<group>";
+		};
+		1436EE6F1F50B4B800BCB4A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1436EE701F50B4E800BCB4A6 /* Post.swift */,
+				1436EE721F50B4FF00BCB4A6 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6050581F8D0FD2DEBE93AAAC /* Pods */ = {
@@ -424,8 +438,10 @@
 				1436EE681F50B2E900BCB4A6 /* ReusableCell.swift in Sources */,
 				141E67821F50AE5800A37114 /* PostsViewController.swift in Sources */,
 				1436EE6D1F50B42B00BCB4A6 /* PostTableViewCell.swift in Sources */,
+				1436EE711F50B4E800BCB4A6 /* Post.swift in Sources */,
 				1436EE651F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift in Sources */,
 				141E675F1F50ABC100A37114 /* AppDelegate.swift in Sources */,
+				1436EE731F50B4FF00BCB4A6 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
