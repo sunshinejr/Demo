@@ -116,7 +116,10 @@
 		141E675D1F50ABC100A37114 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				147D2B761F50C857003CAF1A /* Database */,
+				147D2B731F50C73C003CAF1A /* DataControllers */,
 				1436EE631F50B2BB00BCB4A6 /* Extensions */,
+				147D2B771F50C860003CAF1A /* Network */,
 				1436EE6F1F50B4B800BCB4A6 /* Models */,
 				1436EE661F50B2DC00BCB4A6 /* Protocols */,
 				1436EE741F50B6A100BCB4A6 /* Types */,
@@ -214,6 +217,43 @@
 				1436EE7A1F50B95000BCB4A6 /* PostTableViewCellViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		147D2B731F50C73C003CAF1A /* DataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				147D2B751F50C753003CAF1A /* Database */,
+				147D2B741F50C748003CAF1A /* Network */,
+			);
+			path = DataControllers;
+			sourceTree = "<group>";
+		};
+		147D2B741F50C748003CAF1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		147D2B751F50C753003CAF1A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		147D2B761F50C857003CAF1A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		147D2B771F50C860003CAF1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		6050581F8D0FD2DEBE93AAAC /* Pods */ = {
