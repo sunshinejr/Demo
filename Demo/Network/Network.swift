@@ -22,7 +22,7 @@ final class Network<Target: TargetType> {
     }
 
     func request<T: Decodable>(_ target: Target, mapObject: T.Type) -> Observable<T> {
-        return provider.request(target)
+        return request(target)
             .map { response -> T in
                 let decoder = JSONDecoder()
                 return try decoder.decode(T.self, from: response.data)
@@ -30,7 +30,7 @@ final class Network<Target: TargetType> {
     }
 
     func request<T: Decodable>(_ target: Target, mapArray: T.Type) -> Observable<[T]> {
-        return provider.request(target)
+        return request(target)
             .map { response -> [T] in
                 let decoder = JSONDecoder()
                 return try decoder.decode([T].self, from: response.data)
