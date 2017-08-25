@@ -8,9 +8,17 @@
 
 import UIKit
 
-class PostsViewController: UIViewController {
+final class PostsViewController: UIViewController {
 
+    @IBOutlet private weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupUI()
+    }
+
+    private func setupUI() {
+        tableView.register(cell: PostTableViewCell.self)
     }
 }

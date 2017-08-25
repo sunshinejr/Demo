@@ -15,6 +15,8 @@
 		141E67831F50AE5800A37114 /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141E67811F50AE5800A37114 /* PostsViewController.xib */; };
 		1436EE651F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE641F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift */; };
 		1436EE681F50B2E900BCB4A6 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE671F50B2E900BCB4A6 /* ReusableCell.swift */; };
+		1436EE6D1F50B42B00BCB4A6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE6B1F50B42B00BCB4A6 /* PostTableViewCell.swift */; };
+		1436EE6E1F50B42B00BCB4A6 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1436EE6C1F50B42B00BCB4A6 /* PostTableViewCell.xib */; };
 		192D0BE55ED86B6608663307 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E84F0BD358818E3F301E068 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		141E67811F50AE5800A37114 /* PostsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
 		1436EE641F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableCell.swift"; sourceTree = "<group>"; };
 		1436EE671F50B2E900BCB4A6 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		1436EE6B1F50B42B00BCB4A6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		1436EE6C1F50B42B00BCB4A6 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		59B7E98A4A700125294BB3A1 /* Pods-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoTests/Pods-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		62699D8CDD01B057FAA89FBB /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E84F0BD358818E3F301E068 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,7 @@
 		141E677F1F50AE2B00A37114 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				1436EE691F50B3FE00BCB4A6 /* Views */,
 				141E67801F50AE5800A37114 /* PostsViewController.swift */,
 				141E67811F50AE5800A37114 /* PostsViewController.xib */,
 			);
@@ -150,6 +155,23 @@
 				1436EE671F50B2E900BCB4A6 /* ReusableCell.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1436EE691F50B3FE00BCB4A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1436EE6A1F50B41000BCB4A6 /* PostTableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1436EE6A1F50B41000BCB4A6 /* PostTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1436EE6B1F50B42B00BCB4A6 /* PostTableViewCell.swift */,
+				1436EE6C1F50B42B00BCB4A6 /* PostTableViewCell.xib */,
+			);
+			path = PostTableViewCell;
 			sourceTree = "<group>";
 		};
 		6050581F8D0FD2DEBE93AAAC /* Pods */ = {
@@ -254,6 +276,7 @@
 				141E67691F50ABC100A37114 /* LaunchScreen.storyboard in Resources */,
 				141E67661F50ABC100A37114 /* Assets.xcassets in Resources */,
 				141E67831F50AE5800A37114 /* PostsViewController.xib in Resources */,
+				1436EE6E1F50B42B00BCB4A6 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +423,7 @@
 			files = (
 				1436EE681F50B2E900BCB4A6 /* ReusableCell.swift in Sources */,
 				141E67821F50AE5800A37114 /* PostsViewController.swift in Sources */,
+				1436EE6D1F50B42B00BCB4A6 /* PostTableViewCell.swift in Sources */,
 				1436EE651F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift in Sources */,
 				141E675F1F50ABC100A37114 /* AppDelegate.swift in Sources */,
 			);
