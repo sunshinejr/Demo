@@ -10,4 +10,8 @@ import RxCocoa
 
 struct PostTableViewCellViewModel {
     let title: Driver<String>
+
+    init(title: String) {
+        self.title = .just(title)
+    }
 }

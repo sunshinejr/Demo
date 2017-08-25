@@ -6,8 +6,8 @@
 //  Copyright © 2017 Łukasz Mróz. All rights reserved.
 //
 
-import UIKit
 import RxSwift
+import UIKit
 
 final class PostTableViewCell: UITableViewCell, ReusableCell {
 
