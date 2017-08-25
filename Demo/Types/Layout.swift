@@ -7,6 +7,7 @@
 //
 
 enum Layout {
+    
     case empty
     case loading
     case content

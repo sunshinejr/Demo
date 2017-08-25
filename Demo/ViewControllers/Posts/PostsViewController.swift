@@ -22,6 +22,7 @@ final class PostsViewController: UIViewController {
 
     private var layout = Layout.empty
     private let disposeBag = DisposeBag()
+    let network = Network<PostsService>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +34,11 @@ final class PostsViewController: UIViewController {
         tableView.register(cell: PostTableViewCell.self)
         tableView.rowHeight = Constants.rowHeight
 
-        let posts = ["hey", "there", "its", "me", "your", "brother"].map(PostTableViewCellViewModel.init)
-        let observablePosts = Driver.just(posts)
-
-        observablePosts
-            .drive(tableView.rx.reusableItems(cellType: PostTableViewCell.self)) { _, viewModel, cell in
+        network.request(.getAllPosts, mapArray: NetworkPost.self)
+            .map { posts in
+                posts.map { PostTableViewCellViewModel(post: $0.to(Post.self)) }
+            }
+            .bind(to: tableView.rx.reusableItems(cellType: PostTableViewCell.self)) { _, viewModel, cell in
                 cell.viewModel = viewModel
             }
             .addDisposableTo(disposeBag)

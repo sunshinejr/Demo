@@ -6,6 +6,21 @@
 //  Copyright © 2017 Łukasz Mróz. All rights reserved.
 //
 
+protocol UserProtocol {
+    var id: Int { get }
+    var name: String { get }
+    var username: String { get }
+    var email: String { get }
+
+    init(id: Int, name: String, username: String, email: String)
+}
+
+extension UserProtocol {
+    func to<T: UserProtocol>(_ type: T.Type) -> T {
+        return T(id: id, name: name, username: username, email: email)
+    }
+}
+
 struct User {
 
     let id: Int
