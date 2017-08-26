@@ -22,7 +22,7 @@ final class PostsViewController: UIViewController {
 
     private var layout = Layout.empty
     private let disposeBag = DisposeBag()
-    let network = Network<PostsService>()
+    let postsDataController = PostsDataController(network: Network<PostsService>())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +34,11 @@ final class PostsViewController: UIViewController {
         tableView.register(cell: PostTableViewCell.self)
         tableView.rowHeight = Constants.rowHeight
 
-        network.request(.getAllPosts, mapArray: NetworkPost.self)
-            .map { posts in
-                posts.map { PostTableViewCellViewModel(post: $0.to(Post.self)) }
-            }
+        postsDataController.getPosts()
+            .map { $0.value }
+            .filter { $0 != nil }
+            .map { $0! }
+            .map { $0.map(PostTableViewCellViewModel.init) }
             .bind(to: tableView.rx.reusableItems(cellType: PostTableViewCell.self)) { _, viewModel, cell in
                 cell.viewModel = viewModel
             }

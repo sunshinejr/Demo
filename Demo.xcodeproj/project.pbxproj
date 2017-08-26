@@ -26,6 +26,12 @@
 		147D2B7B1F50C922003CAF1A /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7A1F50C922003CAF1A /* PostsService.swift */; };
 		147D2B7D1F50CD05003CAF1A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7C1F50CD05003CAF1A /* Network.swift */; };
 		147D2B7F1F50CF3B003CAF1A /* NetworkPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7E1F50CF3B003CAF1A /* NetworkPost.swift */; };
+		147D2B811F50D989003CAF1A /* PostsNetworkDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B801F50D989003CAF1A /* PostsNetworkDataController.swift */; };
+		147D2B831F51AC17003CAF1A /* DemoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B821F51AC17003CAF1A /* DemoError.swift */; };
+		147D2B851F51AC74003CAF1A /* ObservableType+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B841F51AC74003CAF1A /* ObservableType+ErrorHandling.swift */; };
+		147D2B881F51ADDC003CAF1A /* PostsDataControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B871F51ADDC003CAF1A /* PostsDataControllerProtocol.swift */; };
+		147D2B8B1F51AE26003CAF1A /* PostsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B8A1F51AE26003CAF1A /* PostsDataController.swift */; };
+		147D2B8D1F51AE88003CAF1A /* CompositeDataControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B8C1F51AE88003CAF1A /* CompositeDataControllerProtocol.swift */; };
 		192D0BE55ED86B6608663307 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E84F0BD358818E3F301E068 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +69,12 @@
 		147D2B7A1F50C922003CAF1A /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		147D2B7C1F50CD05003CAF1A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		147D2B7E1F50CF3B003CAF1A /* NetworkPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPost.swift; sourceTree = "<group>"; };
+		147D2B801F50D989003CAF1A /* PostsNetworkDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkDataController.swift; sourceTree = "<group>"; };
+		147D2B821F51AC17003CAF1A /* DemoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoError.swift; sourceTree = "<group>"; };
+		147D2B841F51AC74003CAF1A /* ObservableType+ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+ErrorHandling.swift"; sourceTree = "<group>"; };
+		147D2B871F51ADDC003CAF1A /* PostsDataControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDataControllerProtocol.swift; sourceTree = "<group>"; };
+		147D2B8A1F51AE26003CAF1A /* PostsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDataController.swift; sourceTree = "<group>"; };
+		147D2B8C1F51AE88003CAF1A /* CompositeDataControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeDataControllerProtocol.swift; sourceTree = "<group>"; };
 		59B7E98A4A700125294BB3A1 /* Pods-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoTests/Pods-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		62699D8CDD01B057FAA89FBB /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E84F0BD358818E3F301E068 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +182,7 @@
 			children = (
 				1436EE641F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift */,
 				1436EE7C1F50C4CB00BCB4A6 /* UITableView+Reactive.swift */,
+				147D2B841F51AC74003CAF1A /* ObservableType+ErrorHandling.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -178,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				1436EE671F50B2E900BCB4A6 /* ReusableCell.swift */,
-				1436EE7E1F50C51000BCB4A6 /* ReusableTableViewCell.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -213,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				1436EE751F50B6B700BCB4A6 /* Layout.swift */,
+				147D2B821F51AC17003CAF1A /* DemoError.swift */,
+				1436EE7E1F50C51000BCB4A6 /* ReusableTableViewCell.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -229,7 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				147D2B751F50C753003CAF1A /* Database */,
+				147D2B891F51AE00003CAF1A /* General */,
 				147D2B741F50C748003CAF1A /* Network */,
+				147D2B861F51ADCD003CAF1A /* Protocols */,
 			);
 			path = DataControllers;
 			sourceTree = "<group>";
@@ -237,6 +253,7 @@
 		147D2B741F50C748003CAF1A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				147D2B801F50D989003CAF1A /* PostsNetworkDataController.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -279,6 +296,23 @@
 				147D2B7A1F50C922003CAF1A /* PostsService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		147D2B861F51ADCD003CAF1A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				147D2B8C1F51AE88003CAF1A /* CompositeDataControllerProtocol.swift */,
+				147D2B871F51ADDC003CAF1A /* PostsDataControllerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		147D2B891F51AE00003CAF1A /* General */ = {
+			isa = PBXGroup;
+			children = (
+				147D2B8A1F51AE26003CAF1A /* PostsDataController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		6050581F8D0FD2DEBE93AAAC /* Pods */ = {
@@ -531,13 +565,19 @@
 				147D2B7D1F50CD05003CAF1A /* Network.swift in Sources */,
 				1436EE681F50B2E900BCB4A6 /* ReusableCell.swift in Sources */,
 				141E67821F50AE5800A37114 /* PostsViewController.swift in Sources */,
+				147D2B881F51ADDC003CAF1A /* PostsDataControllerProtocol.swift in Sources */,
+				147D2B851F51AC74003CAF1A /* ObservableType+ErrorHandling.swift in Sources */,
 				1436EE6D1F50B42B00BCB4A6 /* PostTableViewCell.swift in Sources */,
 				1436EE711F50B4E800BCB4A6 /* Post.swift in Sources */,
 				1436EE651F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift in Sources */,
+				147D2B811F50D989003CAF1A /* PostsNetworkDataController.swift in Sources */,
 				1436EE7B1F50B95000BCB4A6 /* PostTableViewCellViewModel.swift in Sources */,
+				147D2B8B1F51AE26003CAF1A /* PostsDataController.swift in Sources */,
 				1436EE761F50B6B700BCB4A6 /* Layout.swift in Sources */,
+				147D2B831F51AC17003CAF1A /* DemoError.swift in Sources */,
 				141E675F1F50ABC100A37114 /* AppDelegate.swift in Sources */,
 				1436EE7D1F50C4CB00BCB4A6 /* UITableView+Reactive.swift in Sources */,
+				147D2B8D1F51AE88003CAF1A /* CompositeDataControllerProtocol.swift in Sources */,
 				147D2B7F1F50CF3B003CAF1A /* NetworkPost.swift in Sources */,
 				1436EE731F50B4FF00BCB4A6 /* User.swift in Sources */,
 				1436EE7F1F50C51000BCB4A6 /* ReusableTableViewCell.swift in Sources */,
