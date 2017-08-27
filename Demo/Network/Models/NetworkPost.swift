@@ -6,7 +6,7 @@
 //  Copyright © 2017 Łukasz Mróz. All rights reserved.
 //
 
-struct NetworkPost: Codable, PostProtocol {
+struct NetworkPost: Codable, PostConvertible {
 
     let id: Int
     let userId: Int

@@ -22,7 +22,12 @@ final class PostsViewController: UIViewController {
 
     private var layout = Layout.empty
     private let disposeBag = DisposeBag()
-    let postsDataController = PostsDataController(network: Network<PostsService>())
+    var postsDataController: PostsDataController!
+
+    convenience init(controller: PostsDataController) {
+        self.init()
+        postsDataController = controller
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

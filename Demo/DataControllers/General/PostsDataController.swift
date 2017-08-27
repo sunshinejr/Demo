@@ -12,14 +12,14 @@ import RxSwift
 struct PostsDataController: PostsDataControllerProtocol, CompositeDataControllerProtocol {
 
     let networkDataController: PostsNetworkDataController
-    let databaseDataController: PostsNetworkDataController
+    let databaseDataController: PostsDatabaseDataControllerProtocol
 
-    init(network: Network<PostsService>) {
+    init(network: Network<PostsService>, database: CDStack) {
         self.networkDataController = PostsNetworkDataController(network: network)
-        self.databaseDataController = PostsNetworkDataController(network: network) // TODO: Replace it when database stack is implemented
+        self.databaseDataController = PostsCDDatabaseDataController(database: database)
     }
 
-    init(networkDataController: PostsNetworkDataController, databaseDataController: PostsNetworkDataController) {
+    init(networkDataController: PostsNetworkDataController, databaseDataController: PostsDatabaseDataControllerProtocol) {
         self.networkDataController = networkDataController
         self.databaseDataController = databaseDataController
     }
@@ -30,9 +30,6 @@ struct PostsDataController: PostsDataControllerProtocol, CompositeDataController
         return get(data: networkDataController.getPosts(),
                    onErrorReturn: { _ in databaseDataController.getPosts() },
                    onSuccessReturn: { posts in
-                    // TODO: Save posts
-                    // TODO: Get posts from DB
-                    return .just(.success(posts))
-        })
+                    databaseDataController.savePosts(posts).flatMap { databaseDataController.getPosts() }})
     }
 }

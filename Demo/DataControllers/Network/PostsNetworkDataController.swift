@@ -20,7 +20,7 @@ struct PostsNetworkDataController: PostsDataControllerProtocol {
     func getPosts() -> Observable<Result<[Post], DemoError>> {
         return network.request(.getAllPosts, mapArray: NetworkPost.self)
             .map { posts in
-                .success(posts.map { $0.to(Post.self) })
+                .success(posts.map { $0.asPost })
             }
             .catchDemoError { .just(.failure($0)) }
     }
