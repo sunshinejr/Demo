@@ -22,4 +22,12 @@ enum DemoError: Error {
             self = .unknown
         }
     }
+
+    var title: String {
+        return "Error"
+    }
+
+    var description: String {
+        return "There was an error. Please try again later."
+    }
 }

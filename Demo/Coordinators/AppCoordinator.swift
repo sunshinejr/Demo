@@ -15,7 +15,8 @@ final class AppCoordinator: Coordinator {
         stack.load { [weak self] success in
             guard let `self` = self else { return completionBlock() }
 
-            let controller = PostsViewController(controller: PostsDataController(network: self.network, database: self.stack))
+            let viewModel = PostsViewModel(dataController: PostsDataController(network: self.network, database: self.stack))
+            let controller = PostsViewController(viewModel: viewModel)
             self.navigationController?.viewControllers = [controller]
             completionBlock()
         }

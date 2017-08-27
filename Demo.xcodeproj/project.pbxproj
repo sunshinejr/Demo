@@ -19,6 +19,11 @@
 		141E67821F50AE5800A37114 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141E67801F50AE5800A37114 /* PostsViewController.swift */; };
 		141E67831F50AE5800A37114 /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 141E67811F50AE5800A37114 /* PostsViewController.xib */; };
 		1432E8481F534C1C008D3F1F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432E8471F534C1C008D3F1F /* AppCoordinator.swift */; };
+		1432E84A1F535097008D3F1F /* OptionalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432E8491F535097008D3F1F /* OptionalProtocol.swift */; };
+		1432E84C1F535100008D3F1F /* ObservableType+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432E84B1F535100008D3F1F /* ObservableType+Optional.swift */; };
+		1434B4311F535CAF0062EA32 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1434B4301F535CAF0062EA32 /* PostsViewModel.swift */; };
+		1434B4331F535D090062EA32 /* UIViewController+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1434B4321F535D090062EA32 /* UIViewController+Reactive.swift */; };
+		1434B4351F535D2F0062EA32 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1434B4341F535D2F0062EA32 /* UIAlertController.swift */; };
 		1436EE651F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE641F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift */; };
 		1436EE681F50B2E900BCB4A6 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE671F50B2E900BCB4A6 /* ReusableCell.swift */; };
 		1436EE6D1F50B42B00BCB4A6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE6B1F50B42B00BCB4A6 /* PostTableViewCell.swift */; };
@@ -72,6 +77,11 @@
 		141E67801F50AE5800A37114 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		141E67811F50AE5800A37114 /* PostsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
 		1432E8471F534C1C008D3F1F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		1432E8491F535097008D3F1F /* OptionalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalProtocol.swift; sourceTree = "<group>"; };
+		1432E84B1F535100008D3F1F /* ObservableType+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Optional.swift"; sourceTree = "<group>"; };
+		1434B4301F535CAF0062EA32 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		1434B4321F535D090062EA32 /* UIViewController+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Reactive.swift"; sourceTree = "<group>"; };
+		1434B4341F535D2F0062EA32 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		1436EE641F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableCell.swift"; sourceTree = "<group>"; };
 		1436EE671F50B2E900BCB4A6 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		1436EE6B1F50B42B00BCB4A6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +224,9 @@
 				147D2B841F51AC74003CAF1A /* ObservableType+ErrorHandling.swift */,
 				1436EE7C1F50C4CB00BCB4A6 /* UITableView+Reactive.swift */,
 				1436EE641F50B2CF00BCB4A6 /* UITableView+ReusableCell.swift */,
+				1432E84B1F535100008D3F1F /* ObservableType+Optional.swift */,
+				1434B4321F535D090062EA32 /* UIViewController+Reactive.swift */,
+				1434B4341F535D2F0062EA32 /* UIAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				1436EE671F50B2E900BCB4A6 /* ReusableCell.swift */,
+				1432E8491F535097008D3F1F /* OptionalProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -267,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				1436EE7A1F50B95000BCB4A6 /* PostTableViewCellViewModel.swift */,
+				1434B4301F535CAF0062EA32 /* PostsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -619,6 +634,7 @@
 				1413050B1F531F4A00F1964F /* PostsDatabaseDataController.swift in Sources */,
 				147D2B7D1F50CD05003CAF1A /* Network.swift in Sources */,
 				14A1754F1F534A450017816D /* PostsDatabaseDataControllerProtocol.swift in Sources */,
+				1432E84A1F535097008D3F1F /* OptionalProtocol.swift in Sources */,
 				1436EE681F50B2E900BCB4A6 /* ReusableCell.swift in Sources */,
 				141305051F52FF8E00F1964F /* CDPost.swift in Sources */,
 				14A1754A1F53453A0017816D /* NSManagedObjectContext+Save.swift in Sources */,
@@ -631,6 +647,7 @@
 				1432E8481F534C1C008D3F1F /* AppCoordinator.swift in Sources */,
 				147D2B811F50D989003CAF1A /* PostsNetworkDataController.swift in Sources */,
 				1436EE7B1F50B95000BCB4A6 /* PostTableViewCellViewModel.swift in Sources */,
+				1432E84C1F535100008D3F1F /* ObservableType+Optional.swift in Sources */,
 				147D2B8B1F51AE26003CAF1A /* PostsDataController.swift in Sources */,
 				1436EE761F50B6B700BCB4A6 /* Layout.swift in Sources */,
 				147D2B831F51AC17003CAF1A /* DemoError.swift in Sources */,
@@ -638,11 +655,14 @@
 				14A175521F534B240017816D /* Coordinator.swift in Sources */,
 				1436EE7D1F50C4CB00BCB4A6 /* UITableView+Reactive.swift in Sources */,
 				147D2B8D1F51AE88003CAF1A /* CompositeDataControllerProtocol.swift in Sources */,
+				1434B4351F535D2F0062EA32 /* UIAlertController.swift in Sources */,
 				147D2B7F1F50CF3B003CAF1A /* NetworkPost.swift in Sources */,
+				1434B4331F535D090062EA32 /* UIViewController+Reactive.swift in Sources */,
 				14A1754D1F5349BD0017816D /* CDManaged.swift in Sources */,
 				141305021F52FDFC00F1964F /* Model.xcdatamodeld in Sources */,
 				141305071F53065000F1964F /* CDUser.swift in Sources */,
 				1436EE731F50B4FF00BCB4A6 /* User.swift in Sources */,
+				1434B4311F535CAF0062EA32 /* PostsViewModel.swift in Sources */,
 				141305091F53120900F1964F /* CDStack.swift in Sources */,
 				1436EE7F1F50C51000BCB4A6 /* ReusableTableViewCell.swift in Sources */,
 				147D2B7B1F50C922003CAF1A /* PostsService.swift in Sources */,

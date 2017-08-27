@@ -20,36 +20,60 @@ final class PostsViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var loadingView: UIView!
 
+    private(set) var viewModel: PostsViewModel!
     private var layout = Layout.empty
     private let disposeBag = DisposeBag()
-    var postsDataController: PostsDataController!
+    private let refreshBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: nil, action: nil)
 
-    convenience init(controller: PostsDataController) {
+    convenience init(viewModel: PostsViewModel) {
         self.init()
-        postsDataController = controller
+
+        self.viewModel = viewModel
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        setupBindings()
     }
 
     private func setupUI() {
         tableView.register(cell: PostTableViewCell.self)
         tableView.rowHeight = Constants.rowHeight
+        navigationItem.rightBarButtonItem = refreshBarButtonItem
 
-        postsDataController.getPosts()
-            .map { $0.value }
-            .filter { $0 != nil }
-            .map { $0! }
-            .map { $0.map(PostTableViewCellViewModel.init) }
-            .bind(to: tableView.rx.reusableItems(cellType: PostTableViewCell.self)) { _, viewModel, cell in
+        updateLayout(to: .empty)
+    }
+
+    private func setupBindings() {
+        let refresh = refreshBarButtonItem.rx.tap.asObservable().startWith(())
+        let input = PostsViewModel.Input(refresh: refresh)
+        let output = viewModel.transform(input: input)
+
+        output.posts
+            .map { $0.isEmpty ? Layout.content : .content }
+            .drive(onNext: { [unowned self] layout in
+                self.updateLayout(to: layout)
+            })
+            .disposed(by: disposeBag)
+
+        refresh
+            .map { Layout.loading }
+            .subscribe(onNext: { [unowned self] layout in
+                self.updateLayout(to: layout)
+            })
+            .disposed(by: disposeBag)
+
+        output.posts
+            .drive(tableView.rx.reusableItems(cellType: PostTableViewCell.self)) { _, viewModel, cell in
                 cell.viewModel = viewModel
             }
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
-        updateLayout(to: .content)
+        output.error
+            .drive(rx.presentError)
+            .disposed(by: disposeBag)
     }
 
     private func updateLayout(to: Layout) {
