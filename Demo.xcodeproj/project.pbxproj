@@ -36,6 +36,13 @@
 		1436EE7B1F50B95000BCB4A6 /* PostTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE7A1F50B95000BCB4A6 /* PostTableViewCellViewModel.swift */; };
 		1436EE7D1F50C4CB00BCB4A6 /* UITableView+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE7C1F50C4CB00BCB4A6 /* UITableView+Reactive.swift */; };
 		1436EE7F1F50C51000BCB4A6 /* ReusableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE7E1F50C51000BCB4A6 /* ReusableTableViewCell.swift */; };
+		1445F8AA1F59D501000E581A /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C981F59D16800CC33AF /* NetworkProtocol.swift */; };
+		1445F8AB1F59D516000E581A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EE701F50B4E800BCB4A6 /* Post.swift */; };
+		1445F8AC1F59D523000E581A /* DemoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B821F51AC17003CAF1A /* DemoError.swift */; };
+		1445F8AD1F59D52E000E581A /* PostsDataControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B871F51ADDC003CAF1A /* PostsDataControllerProtocol.swift */; };
+		1445F8AE1F59D542000E581A /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7A1F50C922003CAF1A /* PostsService.swift */; };
+		1445F8AF1F59D54F000E581A /* NetworkPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7E1F50CF3B003CAF1A /* NetworkPost.swift */; };
+		1445F8B01F59D571000E581A /* ObservableType+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B841F51AC74003CAF1A /* ObservableType+ErrorHandling.swift */; };
 		14648C891F59CACF00CC33AF /* PostsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C881F59CACF00CC33AF /* PostsCoordinator.swift */; };
 		14648C8C1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C8B1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift */; };
 		14648C8E1F59CE3C00CC33AF /* PostsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C8D1F59CE3C00CC33AF /* PostsViewModelProtocol.swift */; };
@@ -747,9 +754,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1445F8AF1F59D54F000E581A /* NetworkPost.swift in Sources */,
+				1445F8AD1F59D52E000E581A /* PostsDataControllerProtocol.swift in Sources */,
+				1445F8AA1F59D501000E581A /* NetworkProtocol.swift in Sources */,
 				14648C961F59D0FC00CC33AF /* PostsNetworkDataController.swift in Sources */,
 				14648C951F59D0CA00CC33AF /* PostsNetworkDataControllerTests.swift in Sources */,
 				14648C971F59D10200CC33AF /* Network.swift in Sources */,
+				1445F8AB1F59D516000E581A /* Post.swift in Sources */,
+				1445F8AC1F59D523000E581A /* DemoError.swift in Sources */,
+				1445F8B01F59D571000E581A /* ObservableType+ErrorHandling.swift in Sources */,
+				1445F8AE1F59D542000E581A /* PostsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
