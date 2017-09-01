@@ -11,7 +11,7 @@ import UIKit
 
 final class PostTableViewCell: UITableViewCell, ReusableCell {
 
-    typealias ViewModel = PostTableViewCellViewModel
+    typealias ViewModel = PostTableViewCellViewModelProtocol
 
     @IBOutlet private weak var titleLabel: UILabel!
 

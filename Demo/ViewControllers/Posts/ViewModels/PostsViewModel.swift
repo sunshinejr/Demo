@@ -9,14 +9,14 @@
 import RxCocoa
 import RxSwift
 
-final class PostsViewModel {
+final class PostsViewModel: PostsViewModelProtocol {
 
-    struct Input {
+    struct Input: PostsViewModelInputProtocol {
         let refresh: Observable<Void>
         let postSelected: Observable<PostTableViewCellViewModel>
     }
 
-    struct Output {
+    struct Output: PostsViewModelOutputProtocol {
         let posts: Driver<[PostTableViewCellViewModel]>
         let error: Driver<DemoError>
         let selectionEnabled: Driver<Bool>
@@ -31,7 +31,7 @@ final class PostsViewModel {
         self.delegate = delegate
     }
 
-    func transform(input: Input) -> Output {
+    func transform(input: PostsViewModelInputProtocol) -> PostsViewModelOutputProtocol {
         let postsResultObservable = dataController.getPosts().shareReplayLatestWhileConnected()
         let errorObservable = postsResultObservable.map { $0.error }.filterNil()
         let postsObservable = postsResultObservable.map { $0.value }.filterNil()

@@ -10,11 +10,9 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-protocol PostsViewControllerDelegate: class {
-    func didSelectPost(_ post: Post)
-}
-
 final class PostsViewController: UIViewController {
+
+    typealias ViewModel = PostsViewModelProtocol
 
     enum Constants {
         static let rowHeight: CGFloat = 40.0
@@ -24,12 +22,12 @@ final class PostsViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var loadingView: UIView!
 
-    private(set) var viewModel: PostsViewModel!
+    private(set) var viewModel: ViewModel!
     private var layout = Layout.empty
     private var disposeBag = DisposeBag()
     private let refreshBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: nil, action: nil)
 
-    convenience init(viewModel: PostsViewModel) {
+    convenience init(viewModel: ViewModel) {
         self.init()
 
         self.viewModel = viewModel
@@ -43,11 +41,13 @@ final class PostsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         setupBindings()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         removeBindings()
     }
 

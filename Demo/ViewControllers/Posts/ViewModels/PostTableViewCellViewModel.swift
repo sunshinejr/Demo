@@ -8,7 +8,7 @@
 
 import RxCocoa
 
-struct PostTableViewCellViewModel {
+struct PostTableViewCellViewModel: PostTableViewCellViewModelProtocol {
 
     let title: Driver<String>
     let post: Post
