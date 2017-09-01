@@ -10,6 +10,10 @@ import RxCocoa
 import RxSwift
 import UIKit
 
+protocol PostsViewControllerDelegate: class {
+    func didSelectPost(_ post: Post)
+}
+
 final class PostsViewController: UIViewController {
 
     enum Constants {
@@ -22,7 +26,7 @@ final class PostsViewController: UIViewController {
 
     private(set) var viewModel: PostsViewModel!
     private var layout = Layout.empty
-    private let disposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     private let refreshBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: nil, action: nil)
 
     convenience init(viewModel: PostsViewModel) {
@@ -35,7 +39,16 @@ final class PostsViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupBindings()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeBindings()
     }
 
     private func setupUI() {
@@ -48,7 +61,10 @@ final class PostsViewController: UIViewController {
 
     private func setupBindings() {
         let refresh = refreshBarButtonItem.rx.tap.asObservable().startWith(())
-        let input = PostsViewModel.Input(refresh: refresh)
+        let postSelected: Observable<PostTableViewCellViewModel> = tableView.rx.itemSelected
+            .map { [unowned self] in try? self.tableView.rx.model(at: $0) }
+            .filterNil()
+        let input = PostsViewModel.Input(refresh: refresh, postSelected: postSelected)
         let output = viewModel.transform(input: input)
 
         output.posts
@@ -74,6 +90,14 @@ final class PostsViewController: UIViewController {
         output.error
             .drive(rx.presentError)
             .disposed(by: disposeBag)
+
+        output.selectionEnabled
+            .drive(tableView.rx.allowsSelection)
+            .disposed(by: disposeBag)
+    }
+
+    private func removeBindings() {
+        disposeBag = DisposeBag()
     }
 
     private func updateLayout(to: Layout) {

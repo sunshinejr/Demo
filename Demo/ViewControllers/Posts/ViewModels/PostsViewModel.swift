@@ -13,17 +13,22 @@ final class PostsViewModel {
 
     struct Input {
         let refresh: Observable<Void>
+        let postSelected: Observable<PostTableViewCellViewModel>
     }
 
     struct Output {
         let posts: Driver<[PostTableViewCellViewModel]>
         let error: Driver<DemoError>
+        let selectionEnabled: Driver<Bool>
     }
 
     let dataController: PostsDataControllerProtocol
 
-    init(dataController: PostsDataControllerProtocol) {
+    private(set) weak var delegate: PostsViewControllerDelegate?
+
+    init(dataController: PostsDataControllerProtocol, delegate: PostsViewControllerDelegate?) {
         self.dataController = dataController
+        self.delegate = delegate
     }
 
     func transform(input: Input) -> Output {
@@ -40,6 +45,14 @@ final class PostsViewModel {
             .flatMapLatest { postsObservable }
             .asDriver(onErrorJustReturn: [])
 
-        return Output(posts: refreshPostsObservable, error: refreshErrorObservable)
+        let selectionEnabled = input.postSelected
+            .do(onNext: { [unowned self] postViewModel in
+                self.delegate?.didSelectPost(postViewModel.post)
+            })
+            .map { _ in false }
+            .startWith(true)
+            .asDriver(onErrorJustReturn: true)
+
+        return Output(posts: refreshPostsObservable, error: refreshErrorObservable, selectionEnabled: selectionEnabled)
     }
 }

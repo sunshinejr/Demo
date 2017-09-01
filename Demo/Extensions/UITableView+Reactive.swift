@@ -19,4 +19,10 @@ extension Reactive where Base: UITableView {
         -> Disposable where O.E == S {
             return items(cellIdentifier: cellType.reuseIdentifier, cellType: cellType)
     }
+
+    var allowsSelection: AnyObserver<Bool> {
+        return UIBindingObserver(UIElement: base) { tableView, allowsSelection in
+            tableView.allowsSelection = allowsSelection
+        }.asObserver()
+    }
 }

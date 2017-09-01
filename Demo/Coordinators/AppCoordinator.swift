@@ -13,12 +13,17 @@ final class AppCoordinator: Coordinator {
 
     func start(completionBlock: @escaping () -> Void) {
         stack.load { [weak self] success in
-            guard let `self` = self else { return completionBlock() }
-
-            let viewModel = PostsViewModel(dataController: PostsDataController(network: self.network, database: self.stack))
-            let controller = PostsViewController(viewModel: viewModel)
-            self.navigationController?.viewControllers = [controller]
+            self?.startPostsCoordinator()
             completionBlock()
         }
+    }
+
+    private func startPostsCoordinator() {
+        let dataController = PostsDataController(network: network, database: stack)
+        let postsCoordinator = PostsCoordinator(navigationController: navigationController, dataController: dataController)
+
+        childCoordinators.append(postsCoordinator)
+
+        postsCoordinator.start()
     }
 }

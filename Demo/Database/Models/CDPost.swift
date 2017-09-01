@@ -10,10 +10,10 @@ import CoreData
 
 final class CDPost: NSManagedObject, CDManaged, PostConvertible {
 
-    @NSManaged fileprivate(set) var id: Int
-    @NSManaged fileprivate(set) var userId: Int
-    @NSManaged fileprivate(set) var title: String
-    @NSManaged fileprivate(set) var body: String
+    @NSManaged private(set) var id: Int
+    @NSManaged private(set) var userId: Int
+    @NSManaged private(set) var title: String
+    @NSManaged private(set) var body: String
 
     func update(with post: Post) {
         id = post.id

@@ -10,10 +10,10 @@ import CoreData
 
 final class CDUser: NSManagedObject, CDManaged, UserConvertible {
 
-    @NSManaged fileprivate(set) var id: Int
-    @NSManaged fileprivate(set) var name: String
-    @NSManaged fileprivate(set) var username: String
-    @NSManaged fileprivate(set) var email: String
+    @NSManaged private(set) var id: Int
+    @NSManaged private(set) var name: String
+    @NSManaged private(set) var username: String
+    @NSManaged private(set) var email: String
 
     func update(with user: User) {
         id = user.id
