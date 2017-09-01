@@ -9,16 +9,16 @@
 import Result
 import RxSwift
 
-struct PostsNetworkDataController: PostsDataControllerProtocol {
+final class PostsNetworkDataController: PostsDataControllerProtocol {
 
-    let network: Network<PostsService>
+    let network: NetworkProtocol
 
-    init(network: Network<PostsService>) {
+    init(network: NetworkProtocol) {
         self.network = network
     }
 
     func getPosts() -> Observable<Result<[Post], DemoError>> {
-        return network.request(.getAllPosts, mapArray: NetworkPost.self)
+        return network.request(PostsService.getAllPosts, mapArray: NetworkPost.self)
             .map { posts in
                 .success(posts.map { $0.asPost })
             }

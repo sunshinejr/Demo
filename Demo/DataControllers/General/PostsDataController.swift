@@ -14,7 +14,7 @@ struct PostsDataController: PostsDataControllerProtocol, CompositeDataController
     let networkDataController: PostsNetworkDataController
     let databaseDataController: PostsDatabaseDataControllerProtocol
 
-    init(network: Network<PostsService>, database: CDStack) {
+    init(network: NetworkProtocol, database: CDStack) {
         self.networkDataController = PostsNetworkDataController(network: network)
         self.databaseDataController = PostsCDDatabaseDataController(database: database)
     }

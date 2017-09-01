@@ -9,19 +9,19 @@
 import Moya
 import RxSwift
 
-final class Network<Target: TargetType> {
+final class Network: NetworkProtocol {
 
-    private let provider: RxMoyaProvider<Target>
+    private let provider: RxMoyaProvider<MultiTarget>
 
-    init(stubClosure: @escaping RxMoyaProvider<Target>.StubClosure = RxMoyaProvider.neverStub) {
-        provider = RxMoyaProvider<Target>(stubClosure: stubClosure, plugins: [NetworkLoggerPlugin(verbose: true)])
+    init(stubClosure: @escaping RxMoyaProvider<MultiTarget>.StubClosure = RxMoyaProvider.neverStub) {
+        provider = RxMoyaProvider<MultiTarget>(stubClosure: stubClosure, plugins: [NetworkLoggerPlugin(verbose: true)])
     }
 
-    func request(_ target: Target) -> Observable<Response> {
-        return provider.request(target)
+    func request(_ target: TargetType) -> Observable<Response> {
+        return provider.request(MultiTarget(target))
     }
 
-    func request<T: Decodable>(_ target: Target, mapObject: T.Type) -> Observable<T> {
+    func request<T: Decodable>(_ target: TargetType, mapObject: T.Type) -> Observable<T> {
         return request(target)
             .map { response -> T in
                 let decoder = JSONDecoder()
@@ -29,7 +29,7 @@ final class Network<Target: TargetType> {
             }
     }
 
-    func request<T: Decodable>(_ target: Target, mapArray: T.Type) -> Observable<[T]> {
+    func request<T: Decodable>(_ target: TargetType, mapArray: T.Type) -> Observable<[T]> {
         return request(target)
             .map { response -> [T] in
                 let decoder = JSONDecoder()

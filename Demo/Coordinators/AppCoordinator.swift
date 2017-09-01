@@ -9,7 +9,7 @@
 final class AppCoordinator: Coordinator {
 
     private let stack = CDStack()
-    private let network = Network<PostsService>()
+    private let network = Network()
 
     func start(completionBlock: @escaping () -> Void) {
         stack.load { [weak self] success in

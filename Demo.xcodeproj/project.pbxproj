@@ -40,6 +40,10 @@
 		14648C8C1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C8B1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift */; };
 		14648C8E1F59CE3C00CC33AF /* PostsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C8D1F59CE3C00CC33AF /* PostsViewModelProtocol.swift */; };
 		14648C901F59CF1200CC33AF /* PostTableViewCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C8F1F59CF1200CC33AF /* PostTableViewCellViewModelProtocol.swift */; };
+		14648C951F59D0CA00CC33AF /* PostsNetworkDataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C941F59D0CA00CC33AF /* PostsNetworkDataControllerTests.swift */; };
+		14648C961F59D0FC00CC33AF /* PostsNetworkDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B801F50D989003CAF1A /* PostsNetworkDataController.swift */; };
+		14648C971F59D10200CC33AF /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7C1F50CD05003CAF1A /* Network.swift */; };
+		14648C991F59D16800CC33AF /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C981F59D16800CC33AF /* NetworkProtocol.swift */; };
 		147D2B7B1F50C922003CAF1A /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7A1F50C922003CAF1A /* PostsService.swift */; };
 		147D2B7D1F50CD05003CAF1A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7C1F50CD05003CAF1A /* Network.swift */; };
 		147D2B7F1F50CF3B003CAF1A /* NetworkPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7E1F50CF3B003CAF1A /* NetworkPost.swift */; };
@@ -104,6 +108,8 @@
 		14648C8B1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewControllerDelegate.swift; sourceTree = "<group>"; };
 		14648C8D1F59CE3C00CC33AF /* PostsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelProtocol.swift; sourceTree = "<group>"; };
 		14648C8F1F59CF1200CC33AF /* PostTableViewCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		14648C941F59D0CA00CC33AF /* PostsNetworkDataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkDataControllerTests.swift; sourceTree = "<group>"; };
+		14648C981F59D16800CC33AF /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		147D2B7A1F50C922003CAF1A /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		147D2B7C1F50CD05003CAF1A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		147D2B7E1F50CF3B003CAF1A /* NetworkPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPost.swift; sourceTree = "<group>"; };
@@ -205,6 +211,8 @@
 		141E67751F50AC3400A37114 /* DemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				14648C921F59D07400CC33AF /* Tests */,
+				14648C911F59D06C00CC33AF /* Test Helpers */,
 				141E67781F50AC3400A37114 /* Info.plist */,
 			);
 			path = DemoTests;
@@ -319,6 +327,29 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		14648C911F59D06C00CC33AF /* Test Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Test Helpers";
+			sourceTree = "<group>";
+		};
+		14648C921F59D07400CC33AF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				14648C931F59D08500CC33AF /* DataControllers */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		14648C931F59D08500CC33AF /* DataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				14648C941F59D0CA00CC33AF /* PostsNetworkDataControllerTests.swift */,
+			);
+			path = DataControllers;
+			sourceTree = "<group>";
+		};
 		147D2B731F50C73C003CAF1A /* DataControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +394,7 @@
 				147D2B781F50C892003CAF1A /* Models */,
 				147D2B791F50C8A5003CAF1A /* Services */,
 				147D2B7C1F50CD05003CAF1A /* Network.swift */,
+				14648C981F59D16800CC33AF /* NetworkProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -489,6 +521,7 @@
 					};
 					141E67731F50AC3400A37114 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -668,6 +701,7 @@
 			files = (
 				1413050B1F531F4A00F1964F /* PostsDatabaseDataController.swift in Sources */,
 				147D2B7D1F50CD05003CAF1A /* Network.swift in Sources */,
+				14648C991F59D16800CC33AF /* NetworkProtocol.swift in Sources */,
 				14A1754F1F534A450017816D /* PostsDatabaseDataControllerProtocol.swift in Sources */,
 				14648C8C1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift in Sources */,
 				1432E84A1F535097008D3F1F /* OptionalProtocol.swift in Sources */,
@@ -713,6 +747,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14648C961F59D0FC00CC33AF /* PostsNetworkDataController.swift in Sources */,
+				14648C951F59D0CA00CC33AF /* PostsNetworkDataControllerTests.swift in Sources */,
+				14648C971F59D10200CC33AF /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,12 +918,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D15A5CE82C1D1E50BC83E21E /* Pods-DemoTests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCHRC6DB43;
 				INFOPLIST_FILE = DemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunshinejr.dummy1.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -896,6 +935,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 59B7E98A4A700125294BB3A1 /* Pods-DemoTests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CCHRC6DB43;
 				INFOPLIST_FILE = DemoTests/Info.plist;
