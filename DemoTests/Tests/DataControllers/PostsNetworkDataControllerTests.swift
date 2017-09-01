@@ -6,4 +6,14 @@
 //  Copyright © 2017 Łukasz Mróz. All rights reserved.
 //
 
-import Foundation
+import Nimble
+import Quick
+
+final class PostsNetworkDataControllerTests: QuickSpec {
+
+    override func spec() {
+        then("true is a definite truth") {
+            expect(true) == true
+        }
+    }
+}
