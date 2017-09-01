@@ -19,10 +19,14 @@ extension PostConvertible {
     }
 }
 
-struct Post: PostConvertible {
+struct Post: PostConvertible, Equatable {
 
     let id: Int
     let userId: Int
     let title: String
     let body: String
+
+    static func ==(lhs: Post, rhs: Post) -> Bool {
+        return lhs.id == rhs.id && lhs.userId == rhs.userId && lhs.title == rhs.title && lhs.body == rhs.body
+    }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DemoError: Error {
+enum DemoError: Error, Equatable {
     case networkError
     case unknown
 
@@ -30,4 +30,13 @@ enum DemoError: Error {
     var description: String {
         return "There was an error. Please try again later."
     }
+
+    static func ==(lhs: DemoError, rhs: DemoError) -> Bool {
+        switch (lhs, rhs) {
+        case (.networkError, .networkError): return true
+        case (.unknown, .unknown): return true
+        default: return false
+        }
+    }
 }
+

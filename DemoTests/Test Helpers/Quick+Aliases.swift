@@ -8,14 +8,14 @@
 
 import Quick
 
-func given(_ description: String, closure: @escaping (Void) -> Void) {
+func given(_ description: String, closure: @escaping () -> Void) {
     describe(description, closure)
 }
 
-func when(_ description: String, closure: @escaping (Void) -> Void) {
+func when(_ description: String, closure: @escaping () -> Void) {
     context(description, closure)
 }
 
-func then(_ description: String, closure: @escaping (Void) -> Void) {
+func then(_ description: String, closure: @escaping () -> Void) {
     it(description, closure: closure)
 }

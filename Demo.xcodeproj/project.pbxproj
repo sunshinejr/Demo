@@ -44,6 +44,10 @@
 		1445F8AF1F59D54F000E581A /* NetworkPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B7E1F50CF3B003CAF1A /* NetworkPost.swift */; };
 		1445F8B01F59D571000E581A /* ObservableType+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B841F51AC74003CAF1A /* ObservableType+ErrorHandling.swift */; };
 		1445F8B21F59D64C000E581A /* Quick+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445F8B11F59D64C000E581A /* Quick+Aliases.swift */; };
+		1445F8B31F59FAA1000E581A /* ObservableType+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432E84B1F535100008D3F1F /* ObservableType+Optional.swift */; };
+		1445F8B41F59FADB000E581A /* OptionalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432E8491F535097008D3F1F /* OptionalProtocol.swift */; };
+		1445F8B71F5A03F0000E581A /* FakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445F8B61F5A03F0000E581A /* FakeNetwork.swift */; };
+		1445F8B91F5A041F000E581A /* Rx+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445F8B81F5A041F000E581A /* Rx+Equatable.swift */; };
 		14648C891F59CACF00CC33AF /* PostsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C881F59CACF00CC33AF /* PostsCoordinator.swift */; };
 		14648C8C1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C8B1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift */; };
 		14648C8E1F59CE3C00CC33AF /* PostsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C8D1F59CE3C00CC33AF /* PostsViewModelProtocol.swift */; };
@@ -113,6 +117,8 @@
 		1436EE7C1F50C4CB00BCB4A6 /* UITableView+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reactive.swift"; sourceTree = "<group>"; };
 		1436EE7E1F50C51000BCB4A6 /* ReusableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReusableTableViewCell.swift; path = Demo/Types/ReusableTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		1445F8B11F59D64C000E581A /* Quick+Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quick+Aliases.swift"; sourceTree = "<group>"; };
+		1445F8B61F5A03F0000E581A /* FakeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetwork.swift; sourceTree = "<group>"; };
+		1445F8B81F5A041F000E581A /* Rx+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Equatable.swift"; sourceTree = "<group>"; };
 		14648C881F59CACF00CC33AF /* PostsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCoordinator.swift; sourceTree = "<group>"; };
 		14648C8B1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewControllerDelegate.swift; sourceTree = "<group>"; };
 		14648C8D1F59CE3C00CC33AF /* PostsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -327,6 +333,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		1445F8B51F5A03E1000E581A /* Test Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				1445F8B61F5A03F0000E581A /* FakeNetwork.swift */,
+			);
+			path = "Test Doubles";
+			sourceTree = "<group>";
+		};
 		14648C8A1F59CCFD00CC33AF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,7 +353,9 @@
 		14648C911F59D06C00CC33AF /* Test Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1445F8B51F5A03E1000E581A /* Test Doubles */,
 				1445F8B11F59D64C000E581A /* Quick+Aliases.swift */,
+				1445F8B81F5A041F000E581A /* Rx+Equatable.swift */,
 			);
 			path = "Test Helpers";
 			sourceTree = "<group>";
@@ -757,13 +773,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1445F8B31F59FAA1000E581A /* ObservableType+Optional.swift in Sources */,
 				1445F8AF1F59D54F000E581A /* NetworkPost.swift in Sources */,
 				1445F8B21F59D64C000E581A /* Quick+Aliases.swift in Sources */,
+				1445F8B71F5A03F0000E581A /* FakeNetwork.swift in Sources */,
 				1445F8AD1F59D52E000E581A /* PostsDataControllerProtocol.swift in Sources */,
 				1445F8AA1F59D501000E581A /* NetworkProtocol.swift in Sources */,
 				14648C961F59D0FC00CC33AF /* PostsNetworkDataController.swift in Sources */,
+				1445F8B41F59FADB000E581A /* OptionalProtocol.swift in Sources */,
 				14648C951F59D0CA00CC33AF /* PostsNetworkDataControllerTests.swift in Sources */,
 				14648C971F59D10200CC33AF /* Network.swift in Sources */,
+				1445F8B91F5A041F000E581A /* Rx+Equatable.swift in Sources */,
 				1445F8AB1F59D516000E581A /* Post.swift in Sources */,
 				1445F8AC1F59D523000E581A /* DemoError.swift in Sources */,
 				1445F8B01F59D571000E581A /* ObservableType+ErrorHandling.swift in Sources */,
