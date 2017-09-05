@@ -8,12 +8,14 @@
 
 import CoreData
 
-final class CDPost: NSManagedObject, CDManaged, PostConvertible {
+final class CDPost: NSManagedObject, CDManagedProtocol, PostConvertible {
 
     @NSManaged private(set) var id: Int
     @NSManaged private(set) var userId: Int
     @NSManaged private(set) var title: String
     @NSManaged private(set) var body: String
+
+    var asModel: Post { return asPost }
 
     func update(with post: Post) {
         id = post.id

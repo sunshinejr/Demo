@@ -12,7 +12,7 @@
 		141305051F52FF8E00F1964F /* CDPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141305041F52FF8E00F1964F /* CDPost.swift */; };
 		141305071F53065000F1964F /* CDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141305061F53065000F1964F /* CDUser.swift */; };
 		141305091F53120900F1964F /* CDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141305081F53120900F1964F /* CDStack.swift */; };
-		1413050B1F531F4A00F1964F /* PostsDatabaseDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413050A1F531F4A00F1964F /* PostsDatabaseDataController.swift */; };
+		1413050B1F531F4A00F1964F /* PostsCDDatabaseDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413050A1F531F4A00F1964F /* PostsCDDatabaseDataController.swift */; };
 		141E675F1F50ABC100A37114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141E675E1F50ABC100A37114 /* AppDelegate.swift */; };
 		141E67661F50ABC100A37114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141E67651F50ABC100A37114 /* Assets.xcassets */; };
 		141E67691F50ABC100A37114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141E67671F50ABC100A37114 /* LaunchScreen.storyboard */; };
@@ -48,6 +48,8 @@
 		1445F8B41F59FADB000E581A /* OptionalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432E8491F535097008D3F1F /* OptionalProtocol.swift */; };
 		1445F8B71F5A03F0000E581A /* FakeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445F8B61F5A03F0000E581A /* FakeNetwork.swift */; };
 		1445F8B91F5A041F000E581A /* Rx+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445F8B81F5A041F000E581A /* Rx+Equatable.swift */; };
+		1445F8BB1F5AC4EC000E581A /* CDStackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445F8BA1F5AC4EC000E581A /* CDStackProtocol.swift */; };
+		1445F8BC1F5AC4EC000E581A /* CDStackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1445F8BA1F5AC4EC000E581A /* CDStackProtocol.swift */; };
 		14648C891F59CACF00CC33AF /* PostsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C881F59CACF00CC33AF /* PostsCoordinator.swift */; };
 		14648C8C1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C8B1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift */; };
 		14648C8E1F59CE3C00CC33AF /* PostsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14648C8D1F59CE3C00CC33AF /* PostsViewModelProtocol.swift */; };
@@ -66,9 +68,15 @@
 		147D2B8B1F51AE26003CAF1A /* PostsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B8A1F51AE26003CAF1A /* PostsDataController.swift */; };
 		147D2B8D1F51AE88003CAF1A /* CompositeDataControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D2B8C1F51AE88003CAF1A /* CompositeDataControllerProtocol.swift */; };
 		14A1754A1F53453A0017816D /* NSManagedObjectContext+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A175491F53453A0017816D /* NSManagedObjectContext+Save.swift */; };
-		14A1754D1F5349BD0017816D /* CDManaged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A1754C1F5349BD0017816D /* CDManaged.swift */; };
+		14A1754D1F5349BD0017816D /* CDManagedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A1754C1F5349BD0017816D /* CDManagedProtocol.swift */; };
 		14A1754F1F534A450017816D /* PostsDatabaseDataControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A1754E1F534A450017816D /* PostsDatabaseDataControllerProtocol.swift */; };
 		14A175521F534B240017816D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A175511F534B240017816D /* Coordinator.swift */; };
+		14DED3781F5C7AC8005EF418 /* CDManagedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A1754C1F5349BD0017816D /* CDManagedProtocol.swift */; };
+		14DED37A1F5C9773005EF418 /* PostsCDDatabaseDataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DED3791F5C9773005EF418 /* PostsCDDatabaseDataControllerTests.swift */; };
+		14DED37B1F5C97AC005EF418 /* PostsCDDatabaseDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413050A1F531F4A00F1964F /* PostsCDDatabaseDataController.swift */; };
+		14DED37D1F5C97E3005EF418 /* FakeCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DED37C1F5C97E3005EF418 /* FakeCDStack.swift */; };
+		14DED37E1F5C995D005EF418 /* PostsDatabaseDataControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A1754E1F534A450017816D /* PostsDatabaseDataControllerProtocol.swift */; };
+		14DED37F1F5C996E005EF418 /* CDPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141305041F52FF8E00F1964F /* CDPost.swift */; };
 		192D0BE55ED86B6608663307 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E84F0BD358818E3F301E068 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +96,7 @@
 		141305041F52FF8E00F1964F /* CDPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPost.swift; sourceTree = "<group>"; };
 		141305061F53065000F1964F /* CDUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUser.swift; sourceTree = "<group>"; };
 		141305081F53120900F1964F /* CDStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStack.swift; sourceTree = "<group>"; };
-		1413050A1F531F4A00F1964F /* PostsDatabaseDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDatabaseDataController.swift; sourceTree = "<group>"; };
+		1413050A1F531F4A00F1964F /* PostsCDDatabaseDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCDDatabaseDataController.swift; sourceTree = "<group>"; };
 		141E675B1F50ABC100A37114 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		141E675E1F50ABC100A37114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		141E67651F50ABC100A37114 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +127,7 @@
 		1445F8B11F59D64C000E581A /* Quick+Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quick+Aliases.swift"; sourceTree = "<group>"; };
 		1445F8B61F5A03F0000E581A /* FakeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetwork.swift; sourceTree = "<group>"; };
 		1445F8B81F5A041F000E581A /* Rx+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Equatable.swift"; sourceTree = "<group>"; };
+		1445F8BA1F5AC4EC000E581A /* CDStackProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStackProtocol.swift; sourceTree = "<group>"; };
 		14648C881F59CACF00CC33AF /* PostsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCoordinator.swift; sourceTree = "<group>"; };
 		14648C8B1F59CD2D00CC33AF /* PostsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewControllerDelegate.swift; sourceTree = "<group>"; };
 		14648C8D1F59CE3C00CC33AF /* PostsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -135,9 +144,11 @@
 		147D2B8A1F51AE26003CAF1A /* PostsDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDataController.swift; sourceTree = "<group>"; };
 		147D2B8C1F51AE88003CAF1A /* CompositeDataControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeDataControllerProtocol.swift; sourceTree = "<group>"; };
 		14A175491F53453A0017816D /* NSManagedObjectContext+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Save.swift"; sourceTree = "<group>"; };
-		14A1754C1F5349BD0017816D /* CDManaged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDManaged.swift; sourceTree = "<group>"; };
+		14A1754C1F5349BD0017816D /* CDManagedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDManagedProtocol.swift; sourceTree = "<group>"; };
 		14A1754E1F534A450017816D /* PostsDatabaseDataControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDatabaseDataControllerProtocol.swift; sourceTree = "<group>"; };
 		14A175511F534B240017816D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		14DED3791F5C9773005EF418 /* PostsCDDatabaseDataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCDDatabaseDataControllerTests.swift; sourceTree = "<group>"; };
+		14DED37C1F5C97E3005EF418 /* FakeCDStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCDStack.swift; sourceTree = "<group>"; };
 		59B7E98A4A700125294BB3A1 /* Pods-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoTests/Pods-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		62699D8CDD01B057FAA89FBB /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E84F0BD358818E3F301E068 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,8 +348,17 @@
 			isa = PBXGroup;
 			children = (
 				1445F8B61F5A03F0000E581A /* FakeNetwork.swift */,
+				14DED37C1F5C97E3005EF418 /* FakeCDStack.swift */,
 			);
 			path = "Test Doubles";
+			sourceTree = "<group>";
+		};
+		1445F8BD1F5AC529000E581A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				14648C981F59D16800CC33AF /* NetworkProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		14648C8A1F59CCFD00CC33AF /* Protocols */ = {
@@ -372,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				14648C941F59D0CA00CC33AF /* PostsNetworkDataControllerTests.swift */,
+				14DED3791F5C9773005EF418 /* PostsCDDatabaseDataControllerTests.swift */,
 			);
 			path = DataControllers;
 			sourceTree = "<group>";
@@ -398,7 +419,7 @@
 		147D2B751F50C753003CAF1A /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				1413050A1F531F4A00F1964F /* PostsDatabaseDataController.swift */,
+				1413050A1F531F4A00F1964F /* PostsCDDatabaseDataController.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -418,9 +439,9 @@
 			isa = PBXGroup;
 			children = (
 				147D2B781F50C892003CAF1A /* Models */,
+				1445F8BD1F5AC529000E581A /* Protocols */,
 				147D2B791F50C8A5003CAF1A /* Services */,
 				147D2B7C1F50CD05003CAF1A /* Network.swift */,
-				14648C981F59D16800CC33AF /* NetworkProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -462,7 +483,8 @@
 		14A1754B1F5349AC0017816D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				14A1754C1F5349BD0017816D /* CDManaged.swift */,
+				14A1754C1F5349BD0017816D /* CDManagedProtocol.swift */,
+				1445F8BA1F5AC4EC000E581A /* CDStackProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -725,7 +747,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1413050B1F531F4A00F1964F /* PostsDatabaseDataController.swift in Sources */,
+				1413050B1F531F4A00F1964F /* PostsCDDatabaseDataController.swift in Sources */,
 				147D2B7D1F50CD05003CAF1A /* Network.swift in Sources */,
 				14648C991F59D16800CC33AF /* NetworkProtocol.swift in Sources */,
 				14A1754F1F534A450017816D /* PostsDatabaseDataControllerProtocol.swift in Sources */,
@@ -757,13 +779,14 @@
 				1434B4351F535D2F0062EA32 /* UIAlertController.swift in Sources */,
 				147D2B7F1F50CF3B003CAF1A /* NetworkPost.swift in Sources */,
 				1434B4331F535D090062EA32 /* UIViewController+Reactive.swift in Sources */,
-				14A1754D1F5349BD0017816D /* CDManaged.swift in Sources */,
+				14A1754D1F5349BD0017816D /* CDManagedProtocol.swift in Sources */,
 				141305021F52FDFC00F1964F /* Model.xcdatamodeld in Sources */,
 				14648C891F59CACF00CC33AF /* PostsCoordinator.swift in Sources */,
 				141305071F53065000F1964F /* CDUser.swift in Sources */,
 				1436EE731F50B4FF00BCB4A6 /* User.swift in Sources */,
 				1434B4311F535CAF0062EA32 /* PostsViewModel.swift in Sources */,
 				141305091F53120900F1964F /* CDStack.swift in Sources */,
+				1445F8BB1F5AC4EC000E581A /* CDStackProtocol.swift in Sources */,
 				1436EE7F1F50C51000BCB4A6 /* ReusableTableViewCell.swift in Sources */,
 				147D2B7B1F50C922003CAF1A /* PostsService.swift in Sources */,
 			);
@@ -774,20 +797,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				1445F8B31F59FAA1000E581A /* ObservableType+Optional.swift in Sources */,
+				14DED37A1F5C9773005EF418 /* PostsCDDatabaseDataControllerTests.swift in Sources */,
+				14DED37F1F5C996E005EF418 /* CDPost.swift in Sources */,
+				14DED3781F5C7AC8005EF418 /* CDManagedProtocol.swift in Sources */,
 				1445F8AF1F59D54F000E581A /* NetworkPost.swift in Sources */,
 				1445F8B21F59D64C000E581A /* Quick+Aliases.swift in Sources */,
 				1445F8B71F5A03F0000E581A /* FakeNetwork.swift in Sources */,
 				1445F8AD1F59D52E000E581A /* PostsDataControllerProtocol.swift in Sources */,
 				1445F8AA1F59D501000E581A /* NetworkProtocol.swift in Sources */,
+				14DED37D1F5C97E3005EF418 /* FakeCDStack.swift in Sources */,
+				14DED37E1F5C995D005EF418 /* PostsDatabaseDataControllerProtocol.swift in Sources */,
 				14648C961F59D0FC00CC33AF /* PostsNetworkDataController.swift in Sources */,
 				1445F8B41F59FADB000E581A /* OptionalProtocol.swift in Sources */,
 				14648C951F59D0CA00CC33AF /* PostsNetworkDataControllerTests.swift in Sources */,
 				14648C971F59D10200CC33AF /* Network.swift in Sources */,
 				1445F8B91F5A041F000E581A /* Rx+Equatable.swift in Sources */,
+				14DED37B1F5C97AC005EF418 /* PostsCDDatabaseDataController.swift in Sources */,
 				1445F8AB1F59D516000E581A /* Post.swift in Sources */,
 				1445F8AC1F59D523000E581A /* DemoError.swift in Sources */,
 				1445F8B01F59D571000E581A /* ObservableType+ErrorHandling.swift in Sources */,
 				1445F8AE1F59D542000E581A /* PostsService.swift in Sources */,
+				1445F8BC1F5AC4EC000E581A /* CDStackProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

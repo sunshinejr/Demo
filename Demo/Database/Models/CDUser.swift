@@ -8,12 +8,14 @@
 
 import CoreData
 
-final class CDUser: NSManagedObject, CDManaged, UserConvertible {
+final class CDUser: NSManagedObject, CDManagedProtocol, UserConvertible {
 
     @NSManaged private(set) var id: Int
     @NSManaged private(set) var name: String
     @NSManaged private(set) var username: String
     @NSManaged private(set) var email: String
+
+    var asModel: User { return asUser }
 
     func update(with user: User) {
         id = user.id

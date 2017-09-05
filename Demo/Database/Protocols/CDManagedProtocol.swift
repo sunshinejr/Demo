@@ -8,11 +8,16 @@
 
 import CoreData
 
-protocol CDManaged {
+protocol CDManagedProtocol {
+    associatedtype Model
+
     static var entityName: String { get }
+    var asModel: Model { get }
+
+    func update(with: Model)
 }
 
-extension CDManaged where Self: NSManagedObject {
+extension CDManagedProtocol where Self: NSManagedObject {
 
     static var entityName: String {
         return entity().name!
