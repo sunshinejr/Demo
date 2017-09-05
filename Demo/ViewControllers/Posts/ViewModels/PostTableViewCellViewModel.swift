@@ -8,7 +8,7 @@
 
 import RxCocoa
 
-struct PostTableViewCellViewModel: PostTableViewCellViewModelProtocol {
+struct PostTableViewCellViewModel: PostTableViewCellViewModelProtocol, Equatable {
 
     let title: Driver<String>
     let post: Post
@@ -16,5 +16,9 @@ struct PostTableViewCellViewModel: PostTableViewCellViewModelProtocol {
     init(post: Post) {
         self.post = post
         self.title = .just(post.title)
+    }
+
+    static func ==(lhs: PostTableViewCellViewModel, rhs: PostTableViewCellViewModel) -> Bool {
+        return lhs.post == rhs.post
     }
 }
