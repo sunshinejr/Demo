@@ -11,4 +11,6 @@ import RxSwift
 protocol PostsDatabaseDataControllerProtocol: PostsDataControllerProtocol {
 
     func savePosts(_ posts: [Post]) -> Observable<Void>
+    func saveAuthor(_ user: User) -> Observable<Void>
+    func saveComments(_ comments: [Comment]) -> Observable<Void>
 }

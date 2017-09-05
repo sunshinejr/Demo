@@ -13,4 +13,5 @@ import RxSwift
 protocol CDStackProtocol {
     func request<T: NSManagedObject & CDManagedProtocol>(_ request: NSFetchRequest<T>) -> Observable<Result<[T.Model], DemoError>>
     func save<T: NSManagedObject & CDManagedProtocol>(_ objects: [T.Model], type: T.Type) -> Observable<Void>
+    func count<T: NSManagedObject & CDManagedProtocol>(_ request: NSFetchRequest<T>) -> Observable<Result<Int, DemoError>>
 }

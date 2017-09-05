@@ -10,6 +10,7 @@ import Foundation
 
 enum DemoError: Error, Equatable {
     case networkError
+    case noResults
     case unknown
 
     init(error: Error) {
@@ -28,6 +29,7 @@ enum DemoError: Error, Equatable {
     }
 
     var description: String {
+        // TODO: Specialize error message for given error
         return localizable(from: .errorTryAgainLater)
     }
 

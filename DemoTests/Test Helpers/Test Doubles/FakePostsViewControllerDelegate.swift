@@ -19,7 +19,7 @@ final class FakePostsViewControllerDelegate: PostsViewControllerDelegate {
         self.didSelectPostClosure = didSelectPostClosure
     }
 
-    func didSelectPost(_ post: Post) {
+    func didSelectPost(_ post: Post, dataController: PostsDataControllerProtocol) {
         didSelectPostClosure?(post)
     }
 }

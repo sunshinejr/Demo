@@ -25,12 +25,50 @@ struct PostsCDDatabaseDataController: PostsDatabaseDataControllerProtocol {
         return database.request(request)
     }
 
+    func getAuthor(post: Post) -> Observable<Result<User, DemoError>> {
+        let request = NSFetchRequest<CDUser>(entityName: CDUser.entityName)
+        request.predicate = NSPredicate(format: "\(#keyPath(CDUser.id)) == %d", post.userId)
+        request.fetchLimit = 1
+
+        let results = database.request(request)
+        // TODO: Extract this to some generic func
+        return results.map { result -> Result<User, DemoError> in
+            switch result {
+            case let .success(users):
+                if let user = users.first {
+                    return .success(user)
+                } else {
+                    return .failure(.noResults)
+                }
+            case let .failure(error):
+                return .failure(error)
+            }
+        }
+    }
+
+    func getCommentsCount(post: Post) -> Observable<Result<Int, DemoError>> {
+        let request = NSFetchRequest<CDComment>(entityName: CDComment.entityName)
+        request.predicate = NSPredicate(format: "\(#keyPath(CDComment.postId)) == %d", post.id)
+
+        return database.count(request)
+    }
+
+    func getComments(post: Post) -> Observable<Result<[Comment], DemoError>> {
+        let request = NSFetchRequest<CDComment>(entityName: CDComment.entityName)
+        request.predicate = NSPredicate(format: "\(#keyPath(CDComment.postId)) == %d", post.id)
+
+        return database.request(request)
+    }
+
     func savePosts(_ posts: [Post]) -> Observable<Void> {
-        // TODO: Remove this one after CD sync testing
-        let random: Int = Int(arc4random_uniform(1000)) + 10
-        let newPost = Post(id: 974 + random, userId: 1461, title: "test\(random)", body: "test\(random)")
-        var newPosts = posts
-        newPosts.append(newPost)
-        return database.save(newPosts, type: CDPost.self)
+        return database.save(posts, type: CDPost.self)
+    }
+
+    func saveAuthor(_ user: User) -> Observable<Void> {
+        return database.save([user], type: CDUser.self)
+    }
+
+    func saveComments(_ comments: [Comment]) -> Observable<Void> {
+        return database.save(comments, type: CDComment.self)
     }
 }

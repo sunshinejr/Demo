@@ -20,4 +20,8 @@ final class FakeCDStack: CDStackProtocol {
     func save<T: NSManagedObject & CDManagedProtocol>(_ objects: [T.Model], type: T.Type) -> Observable<Void> {
         return .just(())
     }
+
+    func count<T: NSManagedObject & CDManagedProtocol>(_ request: NSFetchRequest<T>) -> Observable<Result<Int, DemoError>> {
+        return .just(.success(0))
+    }
 }

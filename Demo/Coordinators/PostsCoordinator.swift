@@ -26,8 +26,9 @@ final class PostsCoordinator: Coordinator {
 
 extension PostsCoordinator: PostsViewControllerDelegate {
 
-    func didSelectPost(_ post: Post) {
-        let controller = PostDetailsViewController()
+    func didSelectPost(_ post: Post, dataController: PostsDataControllerProtocol) {
+        let viewModel = PostDetailsViewModel(post: post, dataController: dataController)
+        let controller = PostDetailsViewController(viewModel: viewModel)
         navigationController?.pushViewController(controller, animated: true)
     }
 }

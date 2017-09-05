@@ -7,6 +7,7 @@
 //
 
 protocol UserConvertible {
+    
     var id: Int { get }
     var name: String { get }
     var username: String { get }
@@ -14,6 +15,7 @@ protocol UserConvertible {
 }
 
 extension UserConvertible {
+
     var asUser: User {
         return User(id: id, name: name, username: username, email: email)
     }
@@ -25,4 +27,8 @@ struct User: UserConvertible {
     let name: String
     let username: String
     let email: String
+
+    static func ==(lhs: User, rhs: User) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

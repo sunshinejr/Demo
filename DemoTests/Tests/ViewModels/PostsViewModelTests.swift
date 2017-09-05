@@ -28,7 +28,7 @@ final class PostsViewModelTests: QuickSpec {
         when("refresh input signal comes") {
             then("new posts data output comes as well") {
                 let posts = (0...10).map { NetworkPost(id: $0, userId: $0, title: "title\($0)", body: "body\($0)") }.map { $0.asPost }
-                dataController.results = [.success(posts)]
+                dataController.postsResults = [.success(posts)]
                 let postsViewModels = posts.map(PostTableViewCellViewModel.init)
                 let refresh = scheduler.createHotObservable([next(300, ())]).asObservable()
                 let input = PostsViewModel.Input(refresh: refresh, postSelected: .empty())

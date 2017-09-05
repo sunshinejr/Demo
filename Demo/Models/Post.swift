@@ -7,6 +7,7 @@
 //
 
 protocol PostConvertible {
+
     var id: Int { get }
     var userId: Int { get }
     var title: String { get }
@@ -14,6 +15,7 @@ protocol PostConvertible {
 }
 
 extension PostConvertible {
+    
     var asPost: Post {
         return Post(id: id, userId: userId, title: title, body: body)
     }
@@ -27,6 +29,6 @@ struct Post: PostConvertible, Equatable {
     let body: String
 
     static func ==(lhs: Post, rhs: Post) -> Bool {
-        return lhs.id == rhs.id && lhs.userId == rhs.userId && lhs.title == rhs.title && lhs.body == rhs.body
+        return lhs.id == rhs.id
     }
 }

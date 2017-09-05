@@ -5,6 +5,10 @@ import Foundation
 enum Localizable {
     /// There was an error. Please try again later.
     case errorTryAgainLater
+    /// Author
+    case author
+    /// Comments
+    case commentsCount
 }
 
 extension Localizable : CustomStringConvertible {
@@ -14,6 +18,10 @@ extension Localizable : CustomStringConvertible {
         switch self {
         case .errorTryAgainLater:
             return Localizable.tr(key: "ERROR_TRY_AGAIN_LATER")
+        case .author:
+            return Localizable.tr(key: "AUTHOR")
+        case .commentsCount:
+            return Localizable.tr(key: "COMMENTS_COUNT")
         }
     }
 

@@ -32,6 +32,7 @@ final class PostsViewModel: PostsViewModelProtocol {
     }
 
     func transform(input: PostsViewModelInputProtocol) -> PostsViewModelOutputProtocol {
+        let dataController = self.dataController
         let postsResultObservable = dataController.getPosts().shareReplayLatestWhileConnected()
         let errorObservable = postsResultObservable.map { $0.error }.filterNil()
         let postsObservable = postsResultObservable.map { $0.value }.filterNil()
@@ -47,7 +48,7 @@ final class PostsViewModel: PostsViewModelProtocol {
 
         let selectionEnabled = input.postSelected
             .do(onNext: { [unowned self] postViewModel in
-                self.delegate?.didSelectPost(postViewModel.post)
+                self.delegate?.didSelectPost(postViewModel.post, dataController: dataController)
             })
             .map { _ in false }
             .startWith(true)

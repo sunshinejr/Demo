@@ -24,7 +24,7 @@ extension CDManagedProtocol where Self: NSManagedObject {
     }
 
     static func insert(into context: NSManagedObjectContext) -> Self {
-        return NSEntityDescription.insertNewObject(forEntityName: CDPost.entityName, into: context) as! Self
+        return NSEntityDescription.insertNewObject(forEntityName: Self.entityName, into: context) as! Self
     }
 }
 

@@ -22,3 +22,12 @@ Also iOS 10 was chosen as a base iOS deployment target just because of `Core Dat
 - [Quick](https://github.com/Quick/Quick) 7 / [Nimble](https://github.com/Quick/Nimble) 1.1 for BDD-ish testing (with `given/when/then` aliases)
 - [RxTest](https://github.com/ReactiveX/RxSwift) 3.6 for stream/events testing
 
+## TODO:
+
+- Simplify NetworkModel -> Model -> CDModel conversion
+- Use Sourcery for some parts of the app (like `Equatable` etc.)
+- Relationships to entities: Post/Comments/Author
+- Move authors/comments to its own data controllers?
+- Better loading stage for details (loader for only part of the screen?)
+- Better error messages
+- Think about reloading the whole post maybe while in it?

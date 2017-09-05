@@ -12,5 +12,8 @@ extension UIAlertController {
 
     convenience init(error: DemoError) {
         self.init(title: error.title, message: error.description, preferredStyle: .alert)
+
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        addAction(action)
     }
 }

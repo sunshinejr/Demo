@@ -21,15 +21,15 @@ protocol CompositeDataControllerProtocol {
 
 extension CompositeDataControllerProtocol {
 
-    func get<T>(data: Observable<Result<T, DemoError>>,
-                onErrorReturn: ((DemoError) -> Observable<Result<T, DemoError>>)? = nil,
-                onSuccessReturn: ((T) -> Observable<Result<T, DemoError>>)? = nil) -> Observable<Result<T, DemoError>> {
+    func get<T, U>(data: Observable<Result<U, DemoError>>,
+                onErrorReturn: @escaping (DemoError) -> Observable<Result<T, DemoError>>,
+                onSuccessReturn: @escaping (U) -> Observable<Result<T, DemoError>>) -> Observable<Result<T, DemoError>> {
         return data.flatMapLatest { result -> Observable<Result<T, DemoError>> in
             switch result {
             case let .success(element):
-                return onSuccessReturn?(element) ?? Observable.just(result)
+                return onSuccessReturn(element)
             case let .failure(error):
-                return onErrorReturn?(error) ?? Observable.just(result)
+                return onErrorReturn(error)
             }
         }
     }

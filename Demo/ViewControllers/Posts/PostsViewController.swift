@@ -60,7 +60,8 @@ final class PostsViewController: UIViewController {
     }
 
     private func setupBindings() {
-        let refresh = refreshBarButtonItem.rx.tap.asObservable().startWith(())
+        let viewDidAppear = rx.sentMessage(#selector(UIViewController.viewDidAppear)).take(1).map { _ in }
+        let refresh = Observable.merge([viewDidAppear, refreshBarButtonItem.rx.tap.asObservable()])
         let postSelected: Observable<PostTableViewCellViewModel> = tableView.rx.itemSelected
             .map { [unowned self] in try? self.tableView.rx.model(at: $0) }
             .filterNil()

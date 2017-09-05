@@ -47,6 +47,17 @@ final class CDStack: CDStackProtocol {
         }
     }
 
+    func count<T: NSManagedObject & CDManagedProtocol>(_ request: NSFetchRequest<T>) -> Observable<Result<Int, DemoError>> {
+        let context = mainContext
+        do {
+            let count = try context.count(for: request)
+            return .just(.success(count))
+        } catch let error {
+            let demoError = DemoError(error: error)
+            return .just(.failure(demoError))
+        }
+    }
+
     func save<T: NSManagedObject & CDManagedProtocol>(_ objects: [T.Model], type: T.Type) -> Observable<Void> {
         let context = syncContext
         let block: () -> Void = {

@@ -7,5 +7,5 @@
 //
 
 protocol PostsViewControllerDelegate: class {
-    func didSelectPost(_ post: Post)
+    func didSelectPost(_ post: Post, dataController: PostsDataControllerProtocol)
 }
