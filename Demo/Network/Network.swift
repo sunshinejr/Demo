@@ -14,7 +14,7 @@ final class Network: NetworkProtocol {
     private let provider: RxMoyaProvider<MultiTarget>
 
     init(stubClosure: @escaping RxMoyaProvider<MultiTarget>.StubClosure = RxMoyaProvider.neverStub) {
-        provider = RxMoyaProvider<MultiTarget>(stubClosure: stubClosure, plugins: [NetworkLoggerPlugin(verbose: true)])
+        provider = RxMoyaProvider<MultiTarget>(stubClosure: stubClosure)
     }
 
     func request(_ target: TargetType) -> Observable<Response> {
