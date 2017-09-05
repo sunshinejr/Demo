@@ -8,5 +8,46 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
+protocol PostDetailsViewModelProtocol {
+    var body: Driver<String> { get }
+    var title: Driver<String> { get }
+    var authorName: Driver<String> { get }
+    var commentsCount: Driver<Int> { get }
+}
+
+import RxCocoa
+import RxSwift
+
+//struct PostDetailsViewModel: PostDetailsViewModelProtocol {
+//
+//}
+
 final class PostDetailsViewController: UIViewController {
+
+    typealias ViewModel = PostDetailsViewModelProtocol
+
+    private(set) var viewModel: ViewModel!
+
+    convenience init(viewModel: ViewModel) {
+        self.init()
+
+        self.viewModel = viewModel
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        setupBindings()
+    }
+
+    private func setupUI() {
+
+    }
+
+    private func setupBindings() {
+
+    }
 }

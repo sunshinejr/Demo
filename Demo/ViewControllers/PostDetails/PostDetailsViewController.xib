@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostDetailsViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostDetailsViewController" customModule="Demo" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -15,7 +19,71 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDP-jE-Yfy">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-4T-BVC">
+                            <rect key="frame" x="0.0" y="17" width="375" height="1014.5"/>
+                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae efficitur metus. Donec quis leo vehicula, pulvinar urna ultricies, ornare purus. Fusce venenatis felis sem, et sagittis sem sagittis vitae. Ut id nibh vehicula, vulputate sem eu, posuere risus. Quisque varius tempor mi, a fermentum enim tincidunt id. Sed efficitur fringilla diam, non sagittis orci fringilla sed. Fusce volutpat augue faucibus metus gravida, non aliquet ante maximus. Nullam porttitor ex congue faucibus eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ut mattis mauris, ac bibendum diam. Fusce nec volutpat lectus, sit amet venenatis felis.
+
+Duis elementum ullamcorper lorem et ornare. Curabitur laoreet justo diam, id vestibulum neque vehicula eget. Nullam vel vulputate turpis, nec mattis orci. Vivamus et erat ante. Suspendisse dapibus condimentum pharetra. Cras sit amet nunc at massa scelerisque euismod. Cras fringilla nunc in purus consectetur, sed rutrum est euismod. Cras sit amet tincidunt risus, vitae faucibus nulla. Cras gravida tortor a mollis lacinia. Aenean at eleifend sapien, eget eleifend sapien. Sed eget egestas lorem, condimentum euismod turpis. Praesent a dignissim enim, quis lobortis ante. Ut congue mi et ultrices rutrum. Duis lobortis tellus orci, id feugiat erat tempor eu. In ultrices diam mi, ut malesuada massa cursus faucibus.
+
+Donec ut posuere sapien. Pellentesque varius finibus erat, at semper nulla ultrices ut. Maecenas odio mi, lacinia vitae nisl pharetra, mattis laoreet est. In porta ac ligula vitae euismod. Nunc tempor mi ut justo accumsan dignissim. Duis pretium rutrum blandit. Nunc condimentum dolor risus, eu tincidunt lacus placerat pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce at aliquet est. Vestibulum iaculis rutrum lorem, ac volutpat felis vehicula id. Nam sollicitudin velit a felis luctus, quis malesuada quam vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vulputate aliquam turpis eleifend pellentesque. Etiam sit amet libero sit amet est vestibulum elementum eget ut diam. Ut quam dui, scelerisque nec diam id, pellentesque commodo est.</mutableString>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXD-oj-aRp">
+                            <rect key="frame" x="0.0" y="1049" width="42" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg0-5x-R2t">
+                            <rect key="frame" x="43" y="1049" width="33" height="14.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kra-yV-0tS">
+                            <rect key="frame" x="0.0" y="1067.5" width="68" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-xW-Yf6">
+                            <rect key="frame" x="69" y="1067.5" width="33" height="14.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="UsR-4T-BVC" firstAttribute="leading" secondItem="aDP-jE-Yfy" secondAttribute="leading" id="CLT-4o-cVL"/>
+                        <constraint firstItem="UsR-4T-BVC" firstAttribute="top" secondItem="aDP-jE-Yfy" secondAttribute="top" constant="17" id="E8Y-z8-XYM"/>
+                        <constraint firstItem="Tg0-5x-R2t" firstAttribute="leading" secondItem="oXD-oj-aRp" secondAttribute="trailing" constant="1" id="Hwh-aZ-s0V"/>
+                        <constraint firstItem="AGO-xW-Yf6" firstAttribute="leading" secondItem="kra-yV-0tS" secondAttribute="trailing" constant="1" id="NUO-ir-Nar"/>
+                        <constraint firstItem="kra-yV-0tS" firstAttribute="top" secondItem="oXD-oj-aRp" secondAttribute="bottom" constant="4" id="QIj-9p-EUh"/>
+                        <constraint firstAttribute="bottom" secondItem="kra-yV-0tS" secondAttribute="bottom" id="X2k-tt-uAC"/>
+                        <constraint firstItem="kra-yV-0tS" firstAttribute="leading" secondItem="oXD-oj-aRp" secondAttribute="leading" id="ZCC-dS-zWU"/>
+                        <constraint firstAttribute="trailing" secondItem="UsR-4T-BVC" secondAttribute="trailing" id="asU-LP-1O1"/>
+                        <constraint firstItem="AGO-xW-Yf6" firstAttribute="baseline" secondItem="kra-yV-0tS" secondAttribute="baseline" id="kbf-ev-X7F"/>
+                        <constraint firstItem="oXD-oj-aRp" firstAttribute="top" secondItem="UsR-4T-BVC" secondAttribute="bottom" constant="17.5" id="nfO-2g-FR4"/>
+                        <constraint firstItem="Tg0-5x-R2t" firstAttribute="baseline" secondItem="oXD-oj-aRp" secondAttribute="baseline" id="r5V-aZ-kHU"/>
+                        <constraint firstItem="oXD-oj-aRp" firstAttribute="leading" secondItem="UsR-4T-BVC" secondAttribute="leading" id="utj-s0-gUL"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aDP-jE-Yfy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Cts-hY-fdc"/>
+                <constraint firstItem="UsR-4T-BVC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JEz-yz-XTe"/>
+                <constraint firstItem="aDP-jE-Yfy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="N6r-Zu-hqP"/>
+                <constraint firstItem="aDP-jE-Yfy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="U5q-Dw-WXa"/>
+                <constraint firstItem="aDP-jE-Yfy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VnN-pL-k4R"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UsR-4T-BVC" secondAttribute="trailing" id="evz-16-DNd"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
