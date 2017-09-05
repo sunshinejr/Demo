@@ -10,5 +10,6 @@ import Result
 import RxSwift
 
 protocol PostsDataControllerProtocol {
+    
     func getPosts() -> Observable<Result<[Post], DemoError>>
 }

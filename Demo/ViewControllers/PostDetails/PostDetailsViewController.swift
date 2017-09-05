@@ -29,6 +29,12 @@ final class PostDetailsViewController: UIViewController {
 
     typealias ViewModel = PostDetailsViewModelProtocol
 
+    @IBOutlet private weak var postBody: UILabel!
+    @IBOutlet private weak var authorLabel: UILabel!
+    @IBOutlet private weak var author: UILabel!
+    @IBOutlet private weak var commentsCountLabel: UILabel!
+    @IBOutlet private weak var commentsCount: UILabel!
+
     private(set) var viewModel: ViewModel!
 
     convenience init(viewModel: ViewModel) {

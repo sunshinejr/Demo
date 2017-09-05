@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostDetailsViewController" customModule="Demo" customModuleProvider="target">
             <connections>
+                <outlet property="author" destination="Tg0-5x-R2t" id="5yd-ij-zlA"/>
+                <outlet property="authorLabel" destination="oXD-oj-aRp" id="350-Sm-1xB"/>
+                <outlet property="commentsCount" destination="AGO-xW-Yf6" id="a7c-KK-WYm"/>
+                <outlet property="commentsCountLabel" destination="kra-yV-0tS" id="kRw-Ix-Ohh"/>
+                <outlet property="postBody" destination="UsR-4T-BVC" id="EDd-Pa-Tt9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,43 +28,40 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDP-jE-Yfy">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-4T-BVC">
-                            <rect key="frame" x="0.0" y="17" width="375" height="1014.5"/>
-                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae efficitur metus. Donec quis leo vehicula, pulvinar urna ultricies, ornare purus. Fusce venenatis felis sem, et sagittis sem sagittis vitae. Ut id nibh vehicula, vulputate sem eu, posuere risus. Quisque varius tempor mi, a fermentum enim tincidunt id. Sed efficitur fringilla diam, non sagittis orci fringilla sed. Fusce volutpat augue faucibus metus gravida, non aliquet ante maximus. Nullam porttitor ex congue faucibus eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ut mattis mauris, ac bibendum diam. Fusce nec volutpat lectus, sit amet venenatis felis.
-
-Duis elementum ullamcorper lorem et ornare. Curabitur laoreet justo diam, id vestibulum neque vehicula eget. Nullam vel vulputate turpis, nec mattis orci. Vivamus et erat ante. Suspendisse dapibus condimentum pharetra. Cras sit amet nunc at massa scelerisque euismod. Cras fringilla nunc in purus consectetur, sed rutrum est euismod. Cras sit amet tincidunt risus, vitae faucibus nulla. Cras gravida tortor a mollis lacinia. Aenean at eleifend sapien, eget eleifend sapien. Sed eget egestas lorem, condimentum euismod turpis. Praesent a dignissim enim, quis lobortis ante. Ut congue mi et ultrices rutrum. Duis lobortis tellus orci, id feugiat erat tempor eu. In ultrices diam mi, ut malesuada massa cursus faucibus.
-
-Donec ut posuere sapien. Pellentesque varius finibus erat, at semper nulla ultrices ut. Maecenas odio mi, lacinia vitae nisl pharetra, mattis laoreet est. In porta ac ligula vitae euismod. Nunc tempor mi ut justo accumsan dignissim. Duis pretium rutrum blandit. Nunc condimentum dolor risus, eu tincidunt lacus placerat pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce at aliquet est. Vestibulum iaculis rutrum lorem, ac volutpat felis vehicula id. Nam sollicitudin velit a felis luctus, quis malesuada quam vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vulputate aliquam turpis eleifend pellentesque. Etiam sit amet libero sit amet est vestibulum elementum eget ut diam. Ut quam dui, scelerisque nec diam id, pellentesque commodo est.</mutableString>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-4T-BVC">
+                            <rect key="frame" x="0.0" y="17" width="375" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXD-oj-aRp">
-                            <rect key="frame" x="0.0" y="1049" width="42" height="14.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" horizontalCompressionResistancePriority="1000" text="Author:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXD-oj-aRp">
+                            <rect key="frame" x="0.0" y="55" width="42" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg0-5x-R2t">
-                            <rect key="frame" x="43" y="1049" width="33" height="14.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Ashfurrow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tg0-5x-R2t">
+                            <rect key="frame" x="43" y="55" width="332" height="14.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kra-yV-0tS">
-                            <rect key="frame" x="0.0" y="1067.5" width="68" height="14.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kra-yV-0tS">
+                            <rect key="frame" x="0.0" y="73.5" width="65" height="15"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-xW-Yf6">
-                            <rect key="frame" x="69" y="1067.5" width="33" height="14.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AGO-xW-Yf6">
+                            <rect key="frame" x="66" y="73.5" width="309" height="14.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Tg0-5x-R2t" secondAttribute="trailing" id="2XN-Wn-Aly"/>
+                        <constraint firstAttribute="trailing" secondItem="AGO-xW-Yf6" secondAttribute="trailing" id="6PU-Av-EPE"/>
                         <constraint firstItem="UsR-4T-BVC" firstAttribute="leading" secondItem="aDP-jE-Yfy" secondAttribute="leading" id="CLT-4o-cVL"/>
                         <constraint firstItem="UsR-4T-BVC" firstAttribute="top" secondItem="aDP-jE-Yfy" secondAttribute="top" constant="17" id="E8Y-z8-XYM"/>
                         <constraint firstItem="Tg0-5x-R2t" firstAttribute="leading" secondItem="oXD-oj-aRp" secondAttribute="trailing" constant="1" id="Hwh-aZ-s0V"/>

@@ -16,7 +16,7 @@ enum DemoError: Error, Equatable {
         switch error {
         case let error as DemoError:
             self = error
-        case is URLError: // a bit too simplified, but probably enough for now
+        case is URLError: // TODO: a bit too simplified error handling here, but probably enough for now
             self = .networkError
         default:
             self = .unknown
@@ -28,7 +28,7 @@ enum DemoError: Error, Equatable {
     }
 
     var description: String {
-        return "There was an error. Please try again later."
+        return localizable(from: .errorTryAgainLater)
     }
 
     static func ==(lhs: DemoError, rhs: DemoError) -> Bool {
