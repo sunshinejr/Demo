@@ -3,15 +3,15 @@ use_frameworks!
 inhibit_all_warnings!
 
 def libraries
-  pod 'RxSwift', '3.6.1'
-  pod 'RxCocoa', '3.6.1'
-  pod 'Moya/RxSwift', '8.0.5'  
+  pod 'RxSwift', '~> 4.5'
+  pod 'RxCocoa', '~> 4.5'
+  pod 'Moya/RxSwift', '~> 12.0'
 end
 
 def test_libraries
-  pod 'Quick', '1.1.0'
-  pod 'Nimble', '7.0.1'
-  pod 'RxTest', '3.6.1'
+  pod 'Quick', '~> 2.0'
+  pod 'Nimble', '~> 8.0'
+  pod 'RxTest', '~> 4.5'
 end
 
 target 'Demo' do
@@ -21,12 +21,4 @@ end
 target 'DemoTests' do
   libraries
   test_libraries
-end
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-              config.build_settings['SWIFT_VERSION'] = '3.0'
-        end
-    end
 end

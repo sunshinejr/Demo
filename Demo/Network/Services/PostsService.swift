@@ -29,8 +29,7 @@ extension PostsService: TargetType {
 
     var baseURL: URL { return URL(string: "https://jsonplaceholder.typicode.com")! }
     var method: Moya.Method { return .get }
-    var parameters: [String : Any]? { return nil }
-    var parameterEncoding: ParameterEncoding { return JSONEncoding.default }
-    var task: Task { return .request }
+    var task: Task { return .requestPlain }
     var sampleData: Data { return Data() }
+    var headers: [String : String]? { return nil }
 }

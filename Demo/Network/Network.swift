@@ -11,14 +11,14 @@ import RxSwift
 
 final class Network: NetworkProtocol {
 
-    private let provider: RxMoyaProvider<MultiTarget>
+    private let provider: MoyaProvider<MultiTarget>
 
-    init(stubClosure: @escaping RxMoyaProvider<MultiTarget>.StubClosure = RxMoyaProvider.neverStub) {
-        provider = RxMoyaProvider<MultiTarget>(stubClosure: stubClosure)
+    init(stubClosure: @escaping MoyaProvider<MultiTarget>.StubClosure = MoyaProvider.neverStub) {
+        provider = MoyaProvider<MultiTarget>(stubClosure: stubClosure)
     }
 
     func request(_ target: TargetType) -> Observable<Response> {
-        return provider.request(MultiTarget(target))
+        return provider.rx.request(MultiTarget(target)).asObservable()
     }
 
     func request<T: Decodable>(_ target: TargetType, mapObject: T.Type) -> Observable<T> {
